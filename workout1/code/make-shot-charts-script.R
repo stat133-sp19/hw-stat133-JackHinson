@@ -10,7 +10,7 @@ library("ggplot2")
 
 setwd("/Users/Jack/workout1/images")
 
-gsw <- read.csv("/Users/Jack/workout1/data/shots-ddta.csv")
+gsw <- read.csv("../data/shots-ddta.csv")
 
 court_file <- "../images/nba-court.jpg"
 

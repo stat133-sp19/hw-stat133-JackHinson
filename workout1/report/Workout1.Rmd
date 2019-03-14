@@ -18,8 +18,12 @@ library(dplyr)
   
   The NBA has turned into a 3-point shooters paradise, due in large part to the revolution led by Green's teammates Steph Curry and Klay Thompson, playfully dubbed the Splash Brothers. 3-point shooting across the league is at an all-time high and the numbers of both attempts and makes continue to rise with every season. And simply put, Draymond is not keeping up. Not with his team or the league. As the following 3 point effectiveness chart points out. As the data points out he not only shoots almost 10 percentage points than Steph Curry *(31.9 compared to 40.8%)*, he also takes almost 1/3 of the total attempts *(232 vs. 687)*. In a league that is trending towards a monstrous increase in 3 pointers because of the larger expected values. Green should be towards more, not less 3 pointers if he wants to stay relevant in the league.
 
+```{r}
+getwd()
+```
+
 ```{r echo=FALSE}
-gsw <- read.csv(file="/Users/Jack/hw-stat133/workout1/data/shots-ddta.csv")
+gsw <- read.csv(file="../data/shots-ddta.csv")
 ```
 ```{r echo=F}
 three_point_effective_percentage<- filter(gsw, shot_type=="3PT Field Goal") %>%group_by(player)%>%summarise(total=sum(shot_type=="3PT Field Goal"), made=sum(shot_made_flag=="shot_yes"), perc_made=(made/total)*100)%>% arrange(desc(perc_made))
